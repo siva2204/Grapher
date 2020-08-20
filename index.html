@@ -17,25 +17,23 @@
     <div class="side-nav">
       <h1>Grapher</h1>
       <form onsubmit="false">
-        <input
-          id="algebra"
-          class="input"
-          type="text"
-          placeholder="algebric function"
-        />
-        <input
-          id="other"
-          class="input"
-          type="text"
-          placeholder="Other function"
-        />
+        <input id="algebra" class="input" type="text" placeholder="tan(x)" />
+        <input id="other" class="input" type="text" placeholder="2*x+4" />
       </form>
 
       <div onclick="draw()" class="button">
         <img src="./img/arrow.png" width="75" height="75" alt="" />
       </div>
-      <div onclick="erase()" class="button">
-        <img src="./img/quit.png" width="75" height="75" alt="" />
+      <div id="format">
+        <h1>input format</h1>
+        <ul>
+          <li>must be in f(x)</li>
+          <li>sin(x)*2</li>
+          <li>cos(x)</li>
+          <li>log(x)</li>
+          <li>pow(x,4)</li>
+          <li>x*x +5</li>
+        </ul>
       </div>
     </div>
 

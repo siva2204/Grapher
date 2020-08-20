@@ -6,12 +6,21 @@ canvas.height = 600;
 
 var centerX = canvas.width / 2; //math center
 var centerY = canvas.height / 2; //math center
+var unit = 1;
 
 var range = 20;
 var scaleX = canvas.width / range;
 var scaleY = canvas.height / range;
 
 var marksize = 15;
+
+var sin = Math.sin;
+var cos = Math.cos;
+var tan = Math.tan;
+var log = Math.log;
+var exp = Math.exp;
+var abs = Math.abs;
+var pow = Math.pow;
 
 var colors = [];
 
@@ -40,11 +49,11 @@ function coordAxes() {
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
 
-  var xposInc = 1 * scaleX;
+  var xposInc = scaleX;
   var xpos, unit;
 
   xpos = centerX - xposInc;
-  unit = -1 * 1;
+  unit = -1;
 
   //left ticks
   while (xpos > 0) {
@@ -107,9 +116,9 @@ function drawfunction(equation) {
   transformation();
 
   ctx.beginPath();
-  ctx.moveTo(-10, equation(-10));
+  ctx.moveTo(-range / 2, equation(-range / 2));
 
-  for (var x = -10 + 0.2; x <= 10; x += 0.2) {
+  for (var x = -range / 2 + range / 1000; x <= range / 2; x += range / 1000) {
     ctx.lineTo(x, equation(x));
   }
   ctx.restore();
@@ -128,20 +137,13 @@ coordAxes();
 
 function draw() {
   if (algebra.value) {
-    console.log("al");
     drawfunction(function (x) {
-      return eval(new String(algebra.value));
+      return eval(algebra.value);
     });
   }
   if (other.value) {
-    console.log("oth");
     drawfunction(function (x) {
-      return Math(eval(new String(algebra.value)));
+      return eval(other.value);
     });
   }
-}
-
-function erase() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  coordAxes();
 }
