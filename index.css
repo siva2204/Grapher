@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 html {
   cursor: auto;
 }
@@ -9,12 +8,12 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgb(26, 26, 26);
-
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
 }
 
 #canvas {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   margin-top: 30px;
   margin-left: auto;
@@ -36,6 +35,43 @@ body {
   overflow-x: hidden;
 }
 
+.side-nav h1 {
+  font-size: 30px;
+  background: -webkit-linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
 .main {
   margin-left: 220px;
+}
+.input {
+  margin: 25px auto;
+  width: 180px;
+  display: block;
+  background-color: #e6e6e6;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+  height: 30px;
+  border: none;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+.input:focus {
+  border: none;
+  outline: none;
+  background-color: #d9d9d9;
+}
+.button {
+  z-index: 2;
+  margin: 20px auto;
+  width: 80px;
+  display: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.img {
+  display: block;
 }

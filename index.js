@@ -13,9 +13,10 @@ var scaleY = canvas.height / range;
 
 var marksize = 15;
 
+var colors = [];
+
 window.addEventListener("resize", () => {
   location.reload();
-  coordsaxis();
 });
 
 function coordAxes() {
@@ -98,4 +99,30 @@ function coordAxes() {
   ctx.restore();
 }
 
+function drawfunction(equation) {
+  ctx.save();
+  transformation();
+
+  ctx.beginPath();
+  ctx.moveTo(-10, equation(-10));
+
+  for (var x = -10 + 0.2; x <= 10; x += 0.2) {
+    ctx.lineTo(x, equation(x));
+  }
+  ctx.restore();
+  ctx.lineJoin = "round";
+  ctx.lineWidth = "3";
+  ctx.strokeStyle = "#262626";
+  ctx.stroke();
+}
+
+function transformation() {
+  ctx.translate(centerX, centerY);
+  ctx.scale(scaleX, -scaleY);
+}
+
 coordAxes();
+
+drawfunction(function (x) {
+  return x * x;
+});
