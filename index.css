@@ -59,7 +59,7 @@ body {
   transition: 0.2s;
   font-size: 18px;
   font-family: "Poppins", sans-serif;
-  font-weight: lighter;
+  font-family: "Roboto", sans-serif;
 }
 
 .input:focus {
