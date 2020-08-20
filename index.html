@@ -16,15 +16,29 @@
     </div>
     <div class="side-nav">
       <h1>Grapher</h1>
-      <input class="input" type="text" />
-      <input class="input" type="text" />
-      <div class="button">
+      <form onsubmit="false">
+        <input
+          id="algebra"
+          class="input"
+          type="text"
+          placeholder="algebric function"
+        />
+        <input
+          id="other"
+          class="input"
+          type="text"
+          placeholder="Other function"
+        />
+      </form>
+
+      <div onclick="draw()" class="button">
         <img src="./img/arrow.png" width="75" height="75" alt="" />
       </div>
-      <div class="button">
+      <div onclick="erase()" class="button">
         <img src="./img/quit.png" width="75" height="75" alt="" />
       </div>
     </div>
+
     <script src="./index.js"></script>
   </body>
 </html>

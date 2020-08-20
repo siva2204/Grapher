@@ -15,6 +15,9 @@ var marksize = 15;
 
 var colors = [];
 
+var algebra = document.querySelector("#algebra");
+var other = document.querySelector("#other");
+
 window.addEventListener("resize", () => {
   location.reload();
 });
@@ -123,6 +126,22 @@ function transformation() {
 
 coordAxes();
 
-drawfunction(function (x) {
-  return x * x;
-});
+function draw() {
+  if (algebra.value) {
+    console.log("al");
+    drawfunction(function (x) {
+      return eval(new String(algebra.value));
+    });
+  }
+  if (other.value) {
+    console.log("oth");
+    drawfunction(function (x) {
+      return Math(eval(new String(algebra.value)));
+    });
+  }
+}
+
+function erase() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  coordAxes();
+}
